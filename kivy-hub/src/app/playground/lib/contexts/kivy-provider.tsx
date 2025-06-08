@@ -6,13 +6,13 @@ import {
   useEffect,
   useRef
 } from 'react';
-import { KivyModule } from '../core/kivy.module';
+import { KivyModule } from '../core/kivy.module.ts';
 
 interface KivyContextInterface {
   kivyModule: MutableRefObject<KivyModule>;
 }
 
-const kivyContext = createContext<KivyContextInterface | null>(null);
+const kivyContext = createContext<KivyContextInterface>(null);
 
 export function useKivyContext() {
   return useContext(kivyContext)!;

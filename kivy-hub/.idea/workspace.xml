@@ -4,25 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0eef774d-8ec0-4c57-a4c8-8a1bbae69cfb" name="Changes" comment="Made codebase compatible">
-      <change afterPath="$PROJECT_DIR$/src/app/(site)/docs/getting-started/objectives/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/(site)/docs/getting-started/problem-identified/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/(site)/docs/getting-started/scope/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/(site)/docs/hardware/math/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/(site)/docs/hardware/overview/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/(site)/docs/recipe-embeddings/architecture/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/(site)/docs/recipe-embeddings/data/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/(site)/docs/recipe-embeddings/objectives/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/(site)/docs/recipe-embeddings/overview/page.tsx" afterDir="false" />
+    <list default="true" id="0eef774d-8ec0-4c57-a4c8-8a1bbae69cfb" name="Changes" comment="Added docs">
+      <change afterPath="$PROJECT_DIR$/src/app/playground/App.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/playground/assets/react.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/playground/components/calibration.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(site)/docs/ai-architecture/encoders/nutriment/page.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(site)/docs/getting-started/installation/page.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(site)/docs/getting-started/introduction/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(site)/docs/getting-started/overview/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(site)/docs/getting-started/quick-start/page.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(site)/docs/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(site)/docs/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/layout/header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout/header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/markdown/markdown-renderer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/markdown/markdown-renderer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/playground/components/core/draggable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/playground/components/core/draggable.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/playground/components/core/movable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/playground/components/core/movable.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/playground/components/core/overlay.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/playground/components/core/overlay.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/playground/components/core/selectable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/playground/components/core/selectable.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/playground/components/dev/widget-stack-debugger.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/playground/components/dev/widget-stack-debugger.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/playground/components/overlays/measure-overlay.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/playground/components/overlays/measure-overlay.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/playground/components/overlays/select-overlay.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/playground/components/overlays/select-overlay.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/playground/components/overlays/slicing-overlay.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/playground/components/overlays/slicing-overlay.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/playground/components/widgets/home-widget.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/playground/components/widgets/home-widget.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/playground/components/widgets/main-selectable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/playground/components/widgets/main-selectable.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/playground/components/widgets/menu-items.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/playground/components/widgets/menu-items.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/playground/components/widgets/timer/timer-menu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/playground/components/widgets/timer/timer-menu.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/playground/contexts/widget-context.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/playground/contexts/widget-context.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/playground/hooks/use-input.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/playground/hooks/use-input.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/playground/lib/contexts/kivy-provider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/playground/lib/contexts/kivy-provider.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/playground/lib/core/kivy.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/playground/lib/core/kivy.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/playground/lib/core/tools/idle.tool.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/playground/lib/core/tools/idle.tool.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/playground/lib/core/tools/move.tool.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/playground/lib/core/tools/move.tool.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/playground/lib/core/tools/tool.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/playground/lib/core/tools/tool.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/playground/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/playground/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +77,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/karo/Developer/Kivy/kivy-hub/src/app/(site)/docs/recipe-embeddings/architecture",
+    "last_opened_file_path": "/Users/karo/Developer/Kivy/kivy-hub/src/app/playground",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -84,10 +91,10 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/app/playground" />
       <recent name="$PROJECT_DIR$/src/app/(site)/docs/recipe-embeddings/architecture" />
       <recent name="$PROJECT_DIR$/src/app/(site)/docs/recipe-embeddings/data" />
       <recent name="$PROJECT_DIR$/src/app/(site)/docs/getting-started/about-the-project/scope" />
-      <recent name="$PROJECT_DIR$/src/app/playground" />
       <recent name="$PROJECT_DIR$/kivy-hub" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -144,7 +151,7 @@
       <workItem from="1749290874418" duration="4000" />
       <workItem from="1749297042936" duration="5381000" />
       <workItem from="1749401337585" duration="9086000" />
-      <workItem from="1749415598873" duration="3484000" />
+      <workItem from="1749415598873" duration="4071000" />
     </task>
     <task id="LOCAL-00001" summary="Initialized and created basic hand tracking input">
       <option name="closed" value="true" />
@@ -218,7 +225,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749417422747</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Added docs">
+      <option name="closed" value="true" />
+      <created>1749419124865</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1749419124865</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -244,6 +259,7 @@
     <MESSAGE value="Added base presentation pages" />
     <MESSAGE value="Added old code for now" />
     <MESSAGE value="Made codebase compatible" />
-    <option name="LAST_COMMIT_MESSAGE" value="Made codebase compatible" />
+    <MESSAGE value="Added docs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added docs" />
   </component>
 </project>

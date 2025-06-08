@@ -1,66 +1,32 @@
-'use client';
-
+import React, { useEffect, useRef, useState } from 'react';
+import {
+  applyHomographyTransform,
+  calculateHomographyMatrix
+} from '../utils/matrix';
 import { FilesetResolver, HandLandmarker } from '@mediapipe/tasks-vision';
-import { useEffect, useRef, useState } from 'react';
-import './App.css';
-import Overlay from './components/core/overlay.tsx';
-import WidgetStackDebugger from './components/dev/widget-stack-debugger.tsx';
-import MeasureOverlay from './components/overlays/measure-overlay.tsx';
-import SlicingOverlay from './components/overlays/slicing-overlay.tsx';
-import HomeWidget from './components/widgets/home-widget.tsx';
-import RecipeWidget from './components/widgets/recipe-widget.tsx';
-import TimerStack from './components/widgets/timer/timer-stack.tsx';
-import { TimerProvider } from './contexts/timer-context.tsx';
-import { useWidget, WidgetProvider } from './contexts/widget-context.tsx';
-import './lib/fontawesome/css/fa.css';
-import { transformCoordinates } from './utils/matrix.ts';
 
-// Widget container that conditionally renders widgets based on context
-const WidgetContainer = () => {
-  const { activeWidget, popScreen } = useWidget();
+const TARGET_POINTS = [
+  { x: 100, y: 100 },
+  { x: window.innerWidth - 100, y: 100 },
+  { x: window.innerWidth - 100, y: window.innerHeight - 100 },
+  { x: 100, y: window.innerHeight - 100 }
+];
 
-  // Only measure, cutting, recipes, and AI show as overlays
-  // Timer shows its options in the menu
-
-  return (
-    <>
-      {activeWidget === 'measure' && (
-        <MeasureOverlay open={true} onClose={() => popScreen()} />
-      )}
-
-      {activeWidget === 'recipes' && (
-        <Overlay
-          open={true}
-          onClose={() => popScreen()}
-          className='bg-black/50 flex items-center justify-center'
-        >
-          <div className='bg-white p-8 rounded-lg'>Recipe Widget (WIP)</div>
-        </Overlay>
-      )}
-
-      {activeWidget === 'cutting' && (
-        <SlicingOverlay open={true} onClose={() => popScreen()} />
-      )}
-
-      {activeWidget === 'ai' && (
-        <Overlay
-          open={true}
-          onClose={() => popScreen()}
-          className='bg-black/50 flex items-center justify-center'
-        >
-          <div className='bg-white p-8 rounded-lg'>AI Assistant (WIP)</div>
-        </Overlay>
-      )}
-    </>
-  );
-};
-
-const HandFingerTracking = () => {
+function Calibration() {
   const videoRef = useRef(null);
   const [handLandmarker, setHandLandmarker] = useState(null);
   const [isTracking, setIsTracking] = useState(false);
   const [webcamRunning, setWebcamRunning] = useState(false);
   const [isModelLoading, setIsModelLoading] = useState(true);
+  const coordsRef = useRef<{ x: number; y: number }>({
+    x: 0,
+    y: 0
+  });
+
+  function getCoords() {
+    console.log(coordsRef.current);
+    return coordsRef.current;
+  }
 
   const hoveredElements = useRef<Set<Element>>(new Set());
 
@@ -181,28 +147,23 @@ const HandFingerTracking = () => {
 
           const distance = calculateDistance(indexFingerTip, thumbTip);
 
-          console.log(indexFingerTip.x, indexFingerTip.y);
+          const x = (1 - indexFingerTip.x) * window.innerWidth;
+          const y = indexFingerTip.y * window.innerHeight;
 
-          const [x, y] = transformCoordinates(
-            indexFingerTip.x * 1920,
-            indexFingerTip.y * 1080
-          );
+          coordsRef.current = { x, y };
 
-          // const [x, y] = [
-          //   (indexFingerTip.x * window.innerWidth + 50) * 1.30,
-          //   (indexFingerTip.y * window.innerHeight - 220) * 1.68
-          // ];
+          console.log(coordsRef.current);
 
-          console.log(x, y);
-
-          ref.current.style.left = `${x}px`;
-          ref.current.style.top = `${y}px`;
+          // ref.current.style.left = `${x}px`;
+          // ref.current.style.top = `${y}px`;
 
           const elementsAtPoint = document
             .elementsFromPoint(x, y)
             .filter((el) => el !== ref.current);
 
           const currentElementsSet = new Set(elementsAtPoint);
+
+          console.log(distance);
 
           if (distance < 0.1) {
             elementsAtPoint.forEach((element) => {
@@ -247,16 +208,30 @@ const HandFingerTracking = () => {
             }
           });
 
+          // Send mousemove events to all current elements
+          // elementsAtPoint.forEach((element) => {
+          //   element.dispatchEvent(
+          //     new MouseEvent('mousemove', {
+          //       clientX: x,
+          //       clientY: y,
+          //       bubbles: true,
+          //       cancelable: true
+          //     })
+          //   );
+          // });
+
           hoveredElements.current = currentElementsSet;
         });
       }
     }
 
+    // Continue detection loop
     if (isTracking) {
       animationFrameId = requestAnimationFrame(predictWebcam);
     }
   };
 
+  // Calculate distance between two points in 3D space
   const calculateDistance = (point1, point2) => {
     return Math.sqrt(
       Math.pow(point1.x - point2.x, 2) +
@@ -272,40 +247,114 @@ const HandFingerTracking = () => {
     setIsTracking(!isTracking);
   };
 
+  //////////
+
+  const [calibrationPoints, setCalibrationPoints] = useState([]);
+  const [currentPointIndex, setCurrentPointIndex] = useState(0);
+  const [isCalibrating, setIsCalibrating] = useState(false);
+  const [matrix, setMatrix] = useState(null);
+  const [mappedCoords, setMappedCoords] = useState(null);
+
+  const startCalibration = () => {
+    setIsCalibrating(true);
+    setCalibrationPoints([]);
+    setCurrentPointIndex(0);
+    setMatrix(null);
+    setMappedCoords(null);
+    toggleTracking();
+  };
+
+  const handlePointCalibration = async () => {
+    if (currentPointIndex >= TARGET_POINTS.length) return;
+
+    const coords = getCoords();
+    const newPoints = [...calibrationPoints, coords];
+    setCalibrationPoints(newPoints);
+
+    if (currentPointIndex === TARGET_POINTS.length - 1) {
+      // Calculate homography matrix when all points are collected
+      const M = calculateHomographyMatrix(newPoints, TARGET_POINTS);
+      setMatrix(M);
+      setIsCalibrating(false);
+    } else {
+      setCurrentPointIndex((prev) => prev + 1);
+    }
+  };
+
+  const testMapping = async () => {
+    if (!matrix) return;
+
+    try {
+      const coords = getCoords();
+      const mapped = applyHomographyTransform(coords, matrix);
+      setMappedCoords(mapped);
+    } catch (error) {
+      console.error('Error testing mapping:', error);
+    }
+  };
+
   return (
-    <WidgetProvider>
-      <TimerProvider>
-        <main className='w-screen h-screen flex items-start bg-black'>
+    <div className='calibration-container'>
+      {/*<div*/}
+      {/*  ref={ref}*/}
+      {/*  className='fixed w-20 h-20 min-w-20 min-h-20 max-w-20 max-h-20 bg-red-500'*/}
+      {/*></div>*/}
+      <video
+        ref={videoRef}
+        className='w-full max-w-lg'
+        width='640'
+        height='480'
+        autoPlay
+        playsInline
+        style={{ display: 'none' }}
+      />
+      <h1>Coordinate Calibration System</h1>
+
+      <div className='calibration-screen'>
+        {isCalibrating && currentPointIndex < TARGET_POINTS.length && (
           <div
-            ref={ref}
-            className='fixed w-20 h-20 min-w-20 min-h-20 max-w-20 max-h-20 bg-orange-500'
-          ></div>
-          <video
-            ref={videoRef}
-            className='w-full max-w-lg block fixed top-10 left-10 z-[200]'
-            width='640'
-            height='480'
-            autoPlay
-            playsInline
+            className='calibration-point'
+            style={{
+              left: TARGET_POINTS[currentPointIndex].x,
+              top: TARGET_POINTS[currentPointIndex].y
+            }}
           />
-          <div
-            className='w-20 h-20 block fixed top-10 left-10 z-[400] bg-amber-500'
-            onClick={toggleTracking}
-          />
-          <RecipeWidget />
-          <div className='fixed bottom-10 right-10'>
-            <HomeWidget />
-          </div>
+        )}
+      </div>
 
-          <TimerStack />
+      <div className='control-panel'>
+        {!isCalibrating ? (
+          <button onClick={startCalibration}>Start Calibration</button>
+        ) : (
+          <button onClick={handlePointCalibration}>
+            Capture Point {currentPointIndex + 1}
+          </button>
+        )}
 
-          <WidgetContainer />
+        {matrix && <button onClick={testMapping}>Test Mapping</button>}
+      </div>
 
-          {process.env.NODE_ENV !== 'production' && <WidgetStackDebugger />}
-        </main>
-      </TimerProvider>
-    </WidgetProvider>
+      {matrix && (
+        <div className='matrix-display'>
+          <h3>Homography Matrix:</h3>
+          <pre>
+            {matrix.map(
+              (row, i) => row.map((val) => val.toFixed(4)).join('\t') + '\n'
+            )}
+          </pre>
+        </div>
+      )}
+
+      {mappedCoords && (
+        <div className='matrix-display'>
+          <h3>Mapped Coordinates:</h3>
+          <pre>
+            X: {mappedCoords.x.toFixed(2)}, Y: {mappedCoords.y.toFixed(2)}
+          </pre>
+        </div>
+      )}
+    </div>
   );
-};
+}
 
-export default HandFingerTracking;
+export default Calibration;

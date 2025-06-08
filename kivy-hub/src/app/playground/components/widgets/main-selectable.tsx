@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
-import Selectable from '../core/selectable';
-import { cn } from '@/lib/utils';
+import { cn } from '../../lib/utils.ts';
+import Selectable from '../core/selectable.tsx';
 
 interface MainSelectableProps {
   onPress: () => void;

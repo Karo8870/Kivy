@@ -6,7 +6,7 @@ import {
   useRef,
   useState
 } from 'react';
-import { cn } from '../../lib/utils';
+import { cn } from '../../lib/utils.ts';
 
 export default function ({
   children,
@@ -31,7 +31,6 @@ export default function ({
 
   const selectingRef = useRef<boolean>(false);
 
-  // @ts-ignore
   const timeOutRef = useRef<NodeJS.Timeout | undefined>();
 
   return (

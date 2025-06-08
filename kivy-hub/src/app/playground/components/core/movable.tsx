@@ -1,6 +1,6 @@
 import { ReactNode, useRef, useState } from 'react';
-import Selectable from './selectable';
-import { useKivyContext } from '../../lib/contexts/kivy-provider';
+import Selectable from './selectable.tsx';
+import { useKivyContext } from '../../lib/contexts/kivy-provider.tsx';
 
 export default function ({ children }: { children: ReactNode }) {
   const { kivyModule } = useKivyContext();
@@ -17,14 +17,12 @@ export default function ({ children }: { children: ReactNode }) {
         position: 'fixed'
       }}
       onPress={() => {
-        // @ts-ignore
         kivyModule.current.moveTool.mount(selectableRef.current, () => {
           setForceSelect(false);
         });
 
         setForceSelect(true);
       }}
-      // @ts-ignore
       refObject={selectableRef}
     >
       {children}

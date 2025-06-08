@@ -1,7 +1,8 @@
 import { useState, useRef, useEffect } from 'react';
-import Overlay from '../core/overlay';
-import Selectable from '../core/selectable';
-import { Point } from '@/lib/types';
+import Overlay from '../core/overlay.tsx';
+import Selectable from '../core/selectable.tsx';
+import { Point } from '../../lib/types.ts';
+import { cn } from '../../lib/utils.ts';
 
 interface SlicingOverlayProps {
   open: boolean;

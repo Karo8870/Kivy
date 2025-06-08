@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
-import { useTimer } from '../../../contexts/timer-context';
-import { useWidget } from '../../../contexts/widget-context';
+import { useTimer } from '../../../contexts/timer-context.tsx';
+import { useWidget } from '../../../contexts/widget-context.tsx';
 
 export interface TimerMenuItem {
   id: number;
@@ -8,7 +8,6 @@ export interface TimerMenuItem {
   icon: ReactNode;
   minutes: number;
   timerLabel: string;
-
   onPress?(): void;
 }
 
@@ -49,7 +48,7 @@ export function createTimerMenuItems(
     {
       id: 4,
       label: 'Custom',
-      icon: <i className='fa fa-plus text-6xl' />,
+      icon: <i className='fa text-6xl fa-plus' />,
       minutes: 0,
       timerLabel: 'Custom Timer',
       onPress() {

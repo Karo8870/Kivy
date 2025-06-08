@@ -1,12 +1,8 @@
-import { Tool } from './tool';
-import { Point } from '../../types';
+import { Tool } from './tool.ts';
+import { Point } from '../../types.ts';
 
 export class MoveTool extends Tool {
-  // @ts-ignore
-
   offset: Point;
-  // @ts-ignore
-
   element: HTMLElement;
 
   onUnmount?: () => void;
