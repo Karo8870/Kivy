@@ -16,60 +16,56 @@ const navigation: NavItem[] = [
   {
     title: 'Getting Started',
     items: [
-      { title: 'Introduction', href: '/docs/getting-started/introduction' },
-      { title: 'Installation', href: '/docs/getting-started/installation' },
-      { title: 'Quick Start', href: '/docs/getting-started/quick-start' }
+      {
+        title: 'Overview',
+        href: '/docs/getting-started/overview'
+      },
+      {
+        title: 'Objectives',
+        href: '/docs/getting-started/objectives'
+      },
+      {
+        title: 'Problem identified',
+        href: '/docs/getting-started/problem-identified'
+      },
+      {
+        title: 'Scope',
+        href: '/docs/getting-started/scope'
+      }
     ]
   },
   {
-    title: 'AI Architecture',
+    title: 'Hardware',
     items: [
       {
-        title: 'Encoders',
-        items: [
-          {
-            title: 'Nutriment',
-            href: '/docs/ai-architecture/encoders/nutriment'
-          },
-          { title: 'Name', href: '/docs/ai-architecture/encoders/name' }
-        ]
+        title: 'Overview',
+        href: '/docs/hardware/overview'
       },
-      { title: 'Training', href: '/docs/ai-architecture/training' },
-      { title: 'Testing', href: '/docs/ai-architecture/testing' }
+      {
+        title: 'Math',
+        href: '/docs/hardware/math'
+      }
     ]
   },
   {
-    title: 'Background',
+    title: 'Recipe Embeddings',
     items: [
       {
-        title: 'Encoders',
-        items: [
-          {
-            title: 'Nutriment',
-            href: '/docs/ai-architecture/encoders/nutriment'
-          },
-          { title: 'Name', href: '/docs/ai-architecture/encoders/name' }
-        ]
+        title: 'Overview',
+        href: '/docs/recipe-embeddings/overview'
       },
-      { title: 'Training', href: '/docs/ai-architecture/training' },
-      { title: 'Testing', href: '/docs/ai-architecture/testing' }
-    ]
-  },
-  {
-    title: 'Background',
-    items: [
       {
-        title: 'Encoders',
-        items: [
-          {
-            title: 'Nutriment',
-            href: '/docs/ai-architecture/encoders/nutriment'
-          },
-          { title: 'Name', href: '/docs/ai-architecture/encoders/name' }
-        ]
+        title: 'Objectives',
+        href: '/docs/recipe-embeddings/objectives'
       },
-      { title: 'Training', href: '/docs/ai-architecture/training' },
-      { title: 'Testing', href: '/docs/ai-architecture/testing' }
+      {
+        title: 'Architecture',
+        href: '/docs/recipe-embeddings/architecture'
+      },
+      {
+        title: 'Data',
+        href: '/docs/recipe-embeddings/data'
+      }
     ]
   }
 ];

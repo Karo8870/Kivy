@@ -33,7 +33,7 @@ export function Header() {
         </TabNavigationItem>
         <TabNavigationItem
           key='documentation'
-          url='/docs/getting-started/introduction'
+          url='/docs/getting-started/overview'
         >
           Documentation
         </TabNavigationItem>
