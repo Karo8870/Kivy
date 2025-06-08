@@ -4,13 +4,51 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0eef774d-8ec0-4c57-a4c8-8a1bbae69cfb" name="Changes" comment="Added base presentation pages">
+    <list default="true" id="0eef774d-8ec0-4c57-a4c8-8a1bbae69cfb" name="Changes" comment="Migrated codebase to nextJS for playground">
+      <change afterPath="$PROJECT_DIR$/src/app/playground/components/calibration.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/playground/components/core/base-floating-widget.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/playground/components/core/draggable.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/playground/components/core/movable.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/playground/components/core/overlay.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/playground/components/core/scrollable.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/playground/components/core/selectable.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/playground/components/core/widget.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/playground/components/core/zoomable.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/playground/components/dev/widget-stack-debugger.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/playground/components/overlays/measure-overlay.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/playground/components/overlays/range-overlay.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/playground/components/overlays/select-overlay.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/playground/components/overlays/slicing-overlay.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/playground/components/use-calibration.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/playground/components/use-coords.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/playground/components/widgets/home-widget.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/playground/components/widgets/main-selectable.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/playground/components/widgets/menu-config.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/playground/components/widgets/menu-items.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/playground/components/widgets/recipe-widget.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/playground/components/widgets/timer/timer-menu.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/playground/components/widgets/timer/timer-stack.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/playground/contexts/timer-context.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/playground/contexts/widget-context.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/playground/hooks/use-input.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/playground/hooks/use-widget.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/playground/lib/constants.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/playground/lib/contexts/kivy-provider.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/playground/lib/core/kivy.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/playground/lib/core/tools/idle.tool.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/playground/lib/core/tools/move.tool.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/playground/lib/core/tools/tool.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/playground/lib/fontawesome/css/fa.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/playground/lib/fontawesome/webfonts/fa-brands-400.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/playground/lib/fontawesome/webfonts/fa-regular-400.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/playground/lib/fontawesome/webfonts/fa-solid-900.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/playground/lib/types.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/playground/lib/utils.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/playground/utils/matrix.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/playground/utils/widget-stack-manager.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/playground/utils/z-index-manager.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/playground/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/playground/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/playground/core/selectable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/playground/core/selectable.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/playground/dev/hand-cursor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/playground/dev/hand-cursor.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/playground/dev/hand-tracking-video.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/playground/dev/hand-tracking-video.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/hand-tracking/hand-tracking-context.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/hand-tracking/hand-tracking-context.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +59,11 @@
     <option name="OUTPUT_DIRECTORY" value="$PROJECT_DIR$/exportToHTML" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="wip" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -45,30 +88,30 @@
     <option name="openDirectoriesWithSingleClick" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/karo/Developer/Kivy/kivy-hub/kivy-hub&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/karo/Developer/Kivy/kivy-hub/node_modules/prettier&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.prettier&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Users/karo/Developer/Kivy/kivy-hub/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/karo/Developer/Kivy/kivy-hub/src/app/playground",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "/Users/karo/Developer/Kivy/kivy-hub/node_modules/prettier",
+    "settings.editor.selected.configurable": "settings.javascript.prettier",
+    "ts.external.directory.path": "/Users/karo/Developer/Kivy/kivy-hub/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/app/playground" />
       <recent name="$PROJECT_DIR$/kivy-hub" />
       <recent name="$PROJECT_DIR$/kivy-hub/src/app/playground" />
       <recent name="$PROJECT_DIR$/kivy-hub/src/app/docs" />
       <recent name="$PROJECT_DIR$/kivy-hub/src/app/contact" />
-      <recent name="$PROJECT_DIR$/kivy-hub/src/app/about" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/app/(site)/docs/ai-arhitecture/encoders" />
@@ -124,6 +167,7 @@
       <workItem from="1749290874418" duration="4000" />
       <workItem from="1749297042936" duration="5381000" />
       <workItem from="1749401337585" duration="9086000" />
+      <workItem from="1749415598873" duration="191000" />
     </task>
     <task id="LOCAL-00001" summary="Initialized and created basic hand tracking input">
       <option name="closed" value="true" />
