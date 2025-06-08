@@ -1,4 +1,4 @@
-import Overlay from '../core/overlay.tsx';
+import Overlay from '../core/overlay';
 
 export function CalibrationOverlay() {
   return (
@@ -16,7 +16,7 @@ export function CalibrationOverlay() {
       <img
         src='/markers/marker-3.png'
         alt='marker'
-        className='absolute bottom-0 right-0'
+        className='absolute right-0 bottom-0'
       />
       <img
         src='/markers/marker-4.png'

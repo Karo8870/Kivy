@@ -1,5 +1,5 @@
-import Overlay from '../core/overlay.tsx';
-import Selectable from '../core/selectable.tsx';
+import Overlay from '../core/overlay';
+import Selectable from '../core/selectable';
 
 export default function ({
   items,

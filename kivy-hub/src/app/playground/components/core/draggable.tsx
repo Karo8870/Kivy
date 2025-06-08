@@ -1,13 +1,13 @@
 import {
   HTMLAttributes,
-  MutableRefObject,
   MouseEvent as ReactMouseEvent,
+  MutableRefObject,
   ReactNode,
   useEffect,
   useRef,
   useState
 } from 'react';
-import { cn } from '../../lib/utils.ts';
+import { cn } from '@/lib/utils';
 
 export interface DraggableProps extends HTMLAttributes<HTMLDivElement> {
   children: ReactNode;
@@ -51,6 +51,7 @@ export default function Draggable({
 
   const draggableRef = useRef<HTMLDivElement>(null);
   const selectingRef = useRef<boolean>(false);
+  // @ts-ignore
   const timeOutRef = useRef<NodeJS.Timeout | undefined>();
 
   // Track mouse movement to distinguish between click and drag
@@ -369,7 +370,7 @@ export default function Draggable({
         draggableRef.current = node;
       }}
       className={cn(
-        'select-none flex relative',
+        'relative flex select-none',
         isDragging ? 'opacity-80' : '',
         props.className
       )}
@@ -400,7 +401,7 @@ export default function Draggable({
       {showDragHandle && isDraggable && (
         <div
           className={cn(
-            'absolute top-0 left-0 right-0 bg-opacity-20 bg-gray-500',
+            'bg-opacity-20 absolute top-0 right-0 left-0 bg-gray-500',
             isDragging ? 'bg-opacity-40' : '',
             selecting && isInDragHandleRef.current ? 'bg-opacity-30' : '',
             dragHandleClassName

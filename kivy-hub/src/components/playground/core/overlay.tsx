@@ -1,5 +1,5 @@
 import { HTMLAttributes } from 'react';
-import { cn } from '../../lib/utils.ts';
+import { cn } from '@/lib/utils';
 
 interface OverlayProps extends HTMLAttributes<HTMLDivElement> {
   open?: boolean;
@@ -19,7 +19,7 @@ export default function Overlay({
         ...props.style
       }}
       className={cn(
-        'fixed top-0 left-0 w-screen h-screen z-50 justify-center items-center bg-white',
+        'fixed top-0 left-0 z-50 h-screen w-screen items-center justify-center bg-white',
         props.className
       )}
     />

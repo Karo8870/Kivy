@@ -1,11 +1,12 @@
 import { motion } from 'framer-motion';
 import { ReactNode } from 'react';
-import Selectable from '../core/selectable.tsx';
+import Selectable from '../core/selectable';
 
 interface MenuItem {
   id: number;
   label: string;
   icon: ReactNode;
+
   onPress?(): void;
 }
 
@@ -32,7 +33,7 @@ export default function MenuItems({
         return (
           <motion.div
             key={item.id}
-            className='absolute w-32 h-32'
+            className='absolute h-32 w-32'
             initial={{ x: 0, y: 0, opacity: 0 }}
             animate={{
               x: isOpen ? x : 0,
@@ -48,7 +49,7 @@ export default function MenuItems({
                   toggleMenu();
                 }
               }}
-              className='w-32 h-32 bg-white rounded-full flex items-center justify-center text-black'
+              className='flex h-32 w-32 items-center justify-center rounded-full bg-white text-black'
             >
               {item.icon}
             </Selectable>

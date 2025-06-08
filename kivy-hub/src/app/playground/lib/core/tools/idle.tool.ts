@@ -1,3 +1,3 @@
-import { Tool } from './tool.ts';
+import { Tool } from './tool';
 
 export class IdleTool extends Tool {}

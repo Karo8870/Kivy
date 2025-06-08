@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
-import { useWidget } from '../../contexts/widget-context.tsx';
-import MainSelectable from './main-selectable.tsx';
-import MenuItems from './menu-items.tsx';
-import useTimerMenu from './timer/timer-menu.tsx';
+import { useWidget } from '../../contexts/widget-context';
+import MainSelectable from './main-selectable';
+import MenuItems from './menu-items';
+import useTimerMenu from './timer/timer-menu';
 
 // Home menu items
 const createHomeMenuItems = (
@@ -75,6 +75,8 @@ export default function HomeWidget() {
       popScreen();
     }
   };
+
+  // @ts-ignore
 
   const handleSelectWidget = (widgetId, title) => {
     pushScreen({ id: widgetId, title });

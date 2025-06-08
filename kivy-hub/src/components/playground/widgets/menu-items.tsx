@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { ReactNode } from 'react';
-import Selectable from '../core/selectable.tsx';
+import Selectable from '../core/selectable';
 
 interface MenuItem {
   id: number;

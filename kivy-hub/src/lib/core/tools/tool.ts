@@ -1,5 +1,5 @@
-import { KivyModule } from '../kivy.module.ts';
-import { Point } from '../../types.ts';
+import { KivyModule } from '../kivy.module';
+import { Point } from '../../types';
 
 export interface Tool {
   unmount?(): void;

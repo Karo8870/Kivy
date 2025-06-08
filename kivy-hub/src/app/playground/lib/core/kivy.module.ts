@@ -1,9 +1,10 @@
-import { MoveTool } from './tools/move.tool.ts';
-import { Tool } from './tools/tool.ts';
-import { IdleTool } from './tools/idle.tool.ts';
-import { Point } from '../types.ts';
+import { MoveTool } from './tools/move.tool';
+import { Tool } from './tools/tool';
+import { IdleTool } from './tools/idle.tool';
+import { Point } from '../types';
 
 export class KivyModule {
+  // @ts-ignore
   currentPos: Point;
 
   moveTool: MoveTool = new MoveTool(this);

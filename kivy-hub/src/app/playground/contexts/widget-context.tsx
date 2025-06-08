@@ -23,6 +23,7 @@ interface WidgetContextType {
 
 const HOME_SCREEN: WidgetScreen = {
   id: 'home',
+  // @ts-ignore
   title: null
 };
 

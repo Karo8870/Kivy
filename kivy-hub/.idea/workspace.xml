@@ -4,51 +4,46 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0eef774d-8ec0-4c57-a4c8-8a1bbae69cfb" name="Changes" comment="Migrated codebase to nextJS for playground">
-      <change afterPath="$PROJECT_DIR$/src/app/playground/components/calibration.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/playground/components/core/base-floating-widget.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/playground/components/core/draggable.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/playground/components/core/movable.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/playground/components/core/overlay.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/playground/components/core/scrollable.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/playground/components/core/selectable.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/playground/components/core/widget.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/playground/components/core/zoomable.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/playground/components/dev/widget-stack-debugger.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/playground/components/overlays/measure-overlay.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/playground/components/overlays/range-overlay.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/playground/components/overlays/select-overlay.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/playground/components/overlays/slicing-overlay.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/playground/components/use-calibration.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/playground/components/use-coords.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/playground/components/widgets/home-widget.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/playground/components/widgets/main-selectable.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/playground/components/widgets/menu-config.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/playground/components/widgets/menu-items.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/playground/components/widgets/recipe-widget.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/playground/components/widgets/timer/timer-menu.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/playground/components/widgets/timer/timer-stack.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/playground/contexts/timer-context.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/playground/contexts/widget-context.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/playground/hooks/use-input.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/playground/hooks/use-widget.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/playground/lib/constants.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/playground/lib/contexts/kivy-provider.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/playground/lib/core/kivy.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/playground/lib/core/tools/idle.tool.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/playground/lib/core/tools/move.tool.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/playground/lib/core/tools/tool.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/playground/lib/fontawesome/css/fa.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/playground/lib/fontawesome/webfonts/fa-brands-400.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/playground/lib/fontawesome/webfonts/fa-regular-400.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/playground/lib/fontawesome/webfonts/fa-solid-900.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/playground/lib/types.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/playground/lib/utils.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/playground/utils/matrix.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/playground/utils/widget-stack-manager.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/playground/utils/z-index-manager.ts" afterDir="false" />
+    <list default="true" id="0eef774d-8ec0-4c57-a4c8-8a1bbae69cfb" name="Changes" comment="Added old code for now">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/playground/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/playground/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/playground/components/calibration.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/playground/components/core/draggable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/playground/components/core/draggable.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/playground/components/core/movable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/playground/components/core/movable.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/playground/components/core/overlay.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/playground/components/core/overlay.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/playground/components/core/selectable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/playground/components/core/selectable.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/playground/components/dev/widget-stack-debugger.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/playground/components/dev/widget-stack-debugger.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/playground/components/overlays/measure-overlay.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/playground/components/overlays/measure-overlay.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/playground/components/overlays/select-overlay.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/playground/components/overlays/select-overlay.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/playground/components/overlays/slicing-overlay.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/playground/components/overlays/slicing-overlay.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/playground/components/widgets/home-widget.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/playground/components/widgets/home-widget.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/playground/components/widgets/main-selectable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/playground/components/widgets/main-selectable.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/playground/components/widgets/menu-items.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/playground/components/widgets/menu-items.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/playground/components/widgets/timer/timer-menu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/playground/components/widgets/timer/timer-menu.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/playground/contexts/widget-context.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/playground/contexts/widget-context.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/playground/hooks/use-input.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/playground/hooks/use-input.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/playground/lib/contexts/kivy-provider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/playground/lib/contexts/kivy-provider.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/playground/lib/core/kivy.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/playground/lib/core/kivy.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/playground/lib/core/tools/idle.tool.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/playground/lib/core/tools/idle.tool.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/playground/lib/core/tools/move.tool.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/playground/lib/core/tools/move.tool.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/playground/lib/core/tools/tool.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/playground/lib/core/tools/tool.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/playground/core/movable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/playground/core/movable.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/playground/core/overlay.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/playground/core/overlay.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/playground/dev/widget-stack-debugger.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/playground/dev/widget-stack-debugger.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/playground/overlays/calibration-overlay.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/playground/overlays/calibration-overlay.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/playground/overlays/measure-overlay.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/playground/overlays/measure-overlay.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/playground/overlays/select-overlay.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/playground/overlays/select-overlay.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/playground/overlays/slicing-overlay.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/playground/overlays/slicing-overlay.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/playground/widgets/home-widget.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/playground/widgets/home-widget.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/playground/widgets/main-selectable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/playground/widgets/main-selectable.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/playground/widgets/menu-items.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/playground/widgets/menu-items.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/playground/widgets/timer/timer-menu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/playground/widgets/timer/timer-menu.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/contexts/widget-context.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/contexts/widget-context.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/use-input.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/use-input.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/contexts/kivy-provider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/contexts/kivy-provider.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/core/kivy.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/core/kivy.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/core/tools/idle.tool.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/core/tools/idle.tool.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/core/tools/move.tool.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/core/tools/move.tool.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/core/tools/tool.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/core/tools/tool.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -167,7 +162,7 @@
       <workItem from="1749290874418" duration="4000" />
       <workItem from="1749297042936" duration="5381000" />
       <workItem from="1749401337585" duration="9086000" />
-      <workItem from="1749415598873" duration="191000" />
+      <workItem from="1749415598873" duration="1785000" />
     </task>
     <task id="LOCAL-00001" summary="Initialized and created basic hand tracking input">
       <option name="closed" value="true" />
@@ -225,7 +220,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749409948920</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Added old code for now">
+      <option name="closed" value="true" />
+      <created>1749415829861</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1749415829862</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -249,6 +252,7 @@
     <MESSAGE value="Switched to NextJS project" />
     <MESSAGE value="Added .idea" />
     <MESSAGE value="Added base presentation pages" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added base presentation pages" />
+    <MESSAGE value="Added old code for now" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added old code for now" />
   </component>
 </project>

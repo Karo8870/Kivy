@@ -1,5 +1,5 @@
-import Overlay from '../core/overlay.tsx';
-import Selectable from '../core/selectable.tsx';
+import Overlay from '../core/overlay';
+import Selectable from '../core/selectable';
 
 export default function ({
   items,
@@ -22,7 +22,7 @@ export default function ({
         <Selectable
           onPress={onSelect}
           key={item.label}
-          className='flex items-center justify-center w-80 h-20 bg-blue-500 rounded-xl'
+          className='flex h-20 w-80 items-center justify-center rounded-xl bg-blue-500'
         >
           <label>{item.value}</label>
         </Selectable>
