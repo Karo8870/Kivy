@@ -36,7 +36,7 @@ function formatTime(time: number) {
 }
 
 // Individual timer card component
-const TimerCard: React.FC<TimerCardProps> = ({
+export const TimerCard: React.FC<TimerCardProps> = ({
   timer,
   isExpanded,
   index,
@@ -101,7 +101,7 @@ const TimerCard: React.FC<TimerCardProps> = ({
   // Combine content inside a container element
   const cardContent = (
     <div
-      className='flex w-full rounded-[40px] overflow-hidden bg-white'
+      className='flex w-full overflow-hidden rounded-[40px] bg-white'
       style={{ height: TIMER_HEIGHT }}
     >
       <div
@@ -112,41 +112,41 @@ const TimerCard: React.FC<TimerCardProps> = ({
         className='h-full'
       />
 
-      <div className='absolute top-4 left-6 gap-2 flex flex-col'>
+      <div className='absolute top-4 left-6 flex flex-col gap-2'>
         <div className='flex items-center'>
-          <i className='fa fa-clock text-black mr-2' />
-          <div className='font-bold text-black text-lg truncate'>
+          <i className='fa fa-clock mr-2 text-black' />
+          <div className='truncate text-lg font-bold text-black'>
             {timer.label}
           </div>
         </div>
-        <div className='text-black text-3xl font-bold tabular-nums'>
+        <div className='text-3xl font-bold text-black tabular-nums'>
           {formatTime(timer.countdown)} left
         </div>
       </div>
 
       {/* Black section */}
-      <div className='flex flex-col justify-center absolute bottom-6 w-full px-6'>
+      <div className='absolute bottom-6 flex w-full flex-col justify-center px-6'>
         <div className='flex items-center justify-center gap-4'>
           <Selectable
             onPress={() =>
               timer.isPaused ? resumeTimer(timer.id) : pauseTimer(timer.id)
             }
-            className='bg-[#FFCC00] w-full h-16 rounded-3xl flex items-center justify-center'
+            className='flex h-16 w-full items-center justify-center rounded-3xl bg-[#FFCC00]'
             stopPropagation={true}
           >
             {timer.isPaused ? (
-              <i className='fa fa-play text-black text-2xl' />
+              <i className='fa fa-play text-2xl text-black' />
             ) : (
-              <i className='fa fa-pause text-black text-2xl' />
+              <i className='fa fa-pause text-2xl text-black' />
             )}
           </Selectable>
 
           <Selectable
             onPress={() => stopTimer(timer.id)}
-            className='bg-[#FFCC00] w-full h-16 rounded-3xl flex items-center justify-center'
+            className='flex h-16 w-full items-center justify-center rounded-3xl bg-[#FFCC00]'
             stopPropagation={true}
           >
-            <i className='fa fa-redo text-black text-2xl' />
+            <i className='fa fa-redo text-2xl text-black' />
           </Selectable>
         </div>
       </div>
@@ -174,7 +174,7 @@ const TimerCard: React.FC<TimerCardProps> = ({
     >
       {isTopmost ? (
         <Draggable
-          className='w-full h-full relative'
+          className='relative h-full w-full'
           onDragStart={handleDragStart}
           onDragMove={handleDragMove}
           onDragEnd={handleDragEnd}

@@ -1,3 +1,5 @@
+'use client';
+
 import {
   HTMLAttributes,
   MouseEvent,
@@ -6,7 +8,7 @@ import {
   useRef,
   useState
 } from 'react';
-import { cn } from '../../lib/utils.ts';
+import { cn } from '../../lib/utils';
 
 export default function ({
   children,
@@ -37,7 +39,7 @@ export default function ({
     <div
       {...props}
       ref={refObject}
-      className={cn('select-none flex ', props.className)}
+      className={cn('flex select-none', props.className)}
       style={{
         boxShadow: showFeedback
           ? selected || forceSelect

@@ -12,14 +12,13 @@ export function Header() {
   return (
     <motion.header
       className={cn(
-        'sticky z-50 flex items-center justify-between gap-8 self-center bg-[#414141]/20 p-3 backdrop-blur-[48px]'
+        'sticky z-50 flex w-dvw items-center justify-between gap-8 self-center bg-[#414141]/20 p-3 backdrop-blur-[48px]'
       )}
-      layout='size'
+      layout='position'
       animate={{
         top: pathname === '/' ? '36px' : '0px',
         borderRadius: pathname === '/' ? '9999px' : '0px',
         border: pathname === '/' ? '1px solid #414141' : 'none',
-        width: '100dvw',
         maxWidth: pathname === '/' ? 'min-content' : '100dvw'
       }}
     >

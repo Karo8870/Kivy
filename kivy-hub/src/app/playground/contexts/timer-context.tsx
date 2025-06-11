@@ -1,4 +1,12 @@
-import { createContext, ReactNode, useContext, useState, useEffect } from 'react';
+'use client';
+
+import {
+  createContext,
+  ReactNode,
+  useContext,
+  useEffect,
+  useState
+} from 'react';
 
 export interface Timer {
   id: string;
@@ -26,7 +34,7 @@ const TIMER_COLORS = [
   '#90EE90', // light green
   '#F5CBA7', // light orange/peach
   '#AED6F1', // light blue
-  '#D7BDE2'  // light purple
+  '#D7BDE2' // light purple
 ];
 
 export function TimerProvider({ children }: { children: ReactNode }) {
@@ -35,8 +43,8 @@ export function TimerProvider({ children }: { children: ReactNode }) {
   // Handle countdown for all active timers
   useEffect(() => {
     const interval = setInterval(() => {
-      setTimers(currentTimers => 
-        currentTimers.map(timer => {
+      setTimers((currentTimers) =>
+        currentTimers.map((timer) => {
           if (timer.isRunning && !timer.isPaused && timer.countdown > 0) {
             return { ...timer, countdown: timer.countdown - 1 };
           } else if (timer.countdown === 0) {
@@ -46,16 +54,16 @@ export function TimerProvider({ children }: { children: ReactNode }) {
         })
       );
     }, 1000);
-    
+
     return () => clearInterval(interval);
   }, []);
 
   const createTimer = (time: number, label?: string): string => {
     if (time <= 0) return '';
-    
+
     const id = Date.now().toString();
     const colorIndex = timers.length % TIMER_COLORS.length;
-    
+
     const newTimer: Timer = {
       id,
       initialTime: time,
@@ -65,48 +73,52 @@ export function TimerProvider({ children }: { children: ReactNode }) {
       label: label || `Timer ${timers.length + 1}`,
       backgroundColor: TIMER_COLORS[colorIndex]
     };
-    
-    setTimers(current => [...current, newTimer]);
+
+    setTimers((current) => [...current, newTimer]);
     return id;
   };
 
   const pauseTimer = (id: string) => {
-    setTimers(current =>
-      current.map(timer =>
+    setTimers((current) =>
+      current.map((timer) =>
         timer.id === id ? { ...timer, isPaused: true } : timer
       )
     );
   };
 
   const resumeTimer = (id: string) => {
-    setTimers(current =>
-      current.map(timer =>
+    setTimers((current) =>
+      current.map((timer) =>
         timer.id === id ? { ...timer, isPaused: false } : timer
       )
     );
   };
 
   const stopTimer = (id: string) => {
-    setTimers(current =>
-      current.map(timer =>
-        timer.id === id ? { ...timer, isRunning: false, isPaused: false } : timer
+    setTimers((current) =>
+      current.map((timer) =>
+        timer.id === id
+          ? { ...timer, isRunning: false, isPaused: false }
+          : timer
       )
     );
   };
-  
+
   const removeTimer = (id: string) => {
-    setTimers(current => current.filter(timer => timer.id !== id));
+    setTimers((current) => current.filter((timer) => timer.id !== id));
   };
 
   return (
-    <TimerContext.Provider value={{ 
-      timers,
-      createTimer,
-      pauseTimer,
-      resumeTimer,
-      stopTimer,
-      removeTimer
-    }}>
+    <TimerContext.Provider
+      value={{
+        timers,
+        createTimer,
+        pauseTimer,
+        resumeTimer,
+        stopTimer,
+        removeTimer
+      }}
+    >
       {children}
     </TimerContext.Provider>
   );
@@ -118,4 +130,4 @@ export function useTimer() {
     throw new Error('useTimer must be used within a TimerProvider');
   }
   return context;
-} 
+}

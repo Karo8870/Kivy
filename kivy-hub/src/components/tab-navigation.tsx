@@ -7,6 +7,7 @@ import {
 } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 export function TabNavigation({
   children,
@@ -15,19 +16,20 @@ export function TabNavigation({
   children: ReactNode;
   onChange?: (key: string | null) => void;
 }) {
+  const pathname = usePathname();
+
   const validChildren = Children.toArray(children).filter(isValidElement);
 
-  const [activeKey, setActiveKey] = useState<string | null>(() => {
-    const firstChild = validChildren[0];
-    return isValidElement(firstChild) ? firstChild.key : '';
-  });
+  const [activeKey, setActiveKey] = useState<string | null>(
+    pathname === '/' ? 'home' : 'documentation'
+  );
 
   return (
     <div className='flex max-w-min'>
       {validChildren.map((child) => {
         if (!isValidElement(child)) return null;
 
-        const isActive = child.key === activeKey;
+        const isActive = child.key?.includes(activeKey || '');
 
         return (
           <Link

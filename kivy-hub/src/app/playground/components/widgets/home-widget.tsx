@@ -1,8 +1,11 @@
+'use client';
+
 import { useEffect, useState } from 'react';
-import { useWidget } from '../../contexts/widget-context.tsx';
-import MainSelectable from './main-selectable.tsx';
-import MenuItems from './menu-items.tsx';
-import useTimerMenu from './timer/timer-menu.tsx';
+import { useWidget } from '../../contexts/widget-context';
+import MainSelectable from './main-selectable';
+import MenuItems from './menu-items';
+import useTimerMenu from './timer/timer-menu';
+import '@/lib/fontawesome/css/fa.css';
 
 // Home menu items
 const createHomeMenuItems = (
@@ -11,7 +14,7 @@ const createHomeMenuItems = (
   {
     id: 1,
     label: 'Timer',
-    icon: <i className='fa text-6xl fa-timer' />,
+    icon: <i className='fa fa-timer text-6xl' />,
     onPress() {
       onSelectWidget('timer', 'Timer');
     }
@@ -19,7 +22,7 @@ const createHomeMenuItems = (
   {
     id: 2,
     label: 'Measure',
-    icon: <i className='fa text-6xl fa-ruler' />,
+    icon: <i className='fa fa-ruler text-6xl' />,
     onPress() {
       onSelectWidget('measure', 'Measure');
     }
@@ -27,7 +30,7 @@ const createHomeMenuItems = (
   {
     id: 3,
     label: 'Cutting',
-    icon: <i className='fa text-6xl fa-knife' />,
+    icon: <i className='fa fa-knife text-6xl' />,
     onPress() {
       onSelectWidget('cutting', 'Cutting');
     }
@@ -35,7 +38,7 @@ const createHomeMenuItems = (
   {
     id: 4,
     label: 'Recipes',
-    icon: <i className='fa text-6xl fa-book' />,
+    icon: <i className='fa fa-book text-6xl' />,
     onPress() {
       onSelectWidget('recipes', 'Recipes');
     }
@@ -43,7 +46,7 @@ const createHomeMenuItems = (
   {
     id: 5,
     label: 'AI',
-    icon: <i className='fa text-6xl fa-brain' />,
+    icon: <i className='fa fa-brain text-6xl' />,
     onPress() {
       onSelectWidget('ai', 'AI Assistant');
     }
@@ -94,14 +97,14 @@ export default function HomeWidget() {
 
   // Add a back icon if we're not on the home screen
   const displayIcon = !isRootScreen ? (
-    <i className='fa fa-arrow-left text-xl text-white absolute left-8 top-1/2 transform -translate-y-1/2'></i>
+    <i className='fa fa-arrow-left absolute top-1/2 left-8 -translate-y-1/2 transform text-xl text-white'></i>
   ) : null;
 
   // Menu is always open when not at root level
   const shouldShowMenu = !isRootScreen || isOpen;
 
   return (
-    <div className='relative w-80 h-80 flex items-center justify-center z-[100]'>
+    <div className='relative z-[100] flex h-80 w-80 items-center justify-center'>
       <MainSelectable
         title={currentScreen.title}
         onPress={handleMainPress}
